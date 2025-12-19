@@ -214,6 +214,4 @@ Kendi klasör isimlerin farklıysa komutları ona göre uyarlayabilirsin.
 > - .NET 8+ SDK  
 > - SQL Server veya uyumlu başka bir veritabanı
 
-```bash
-cd backend
-dotnet restore
+
