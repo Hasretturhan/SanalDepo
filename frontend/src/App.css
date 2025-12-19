@@ -1,0 +1,361 @@
+/* Genel layout */
+.app {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #fdfdfd 0, #f3f4f6 45%, #e5e7eb 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Header */
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.app-header h2 {
+  margin: 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+.address {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.code {
+  font-family: "Consolas", monospace;
+  background: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* View toggle */
+.view-toggle {
+  margin: 20px 0 16px;
+  display: inline-flex;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #e5e7eb66;
+}
+
+.view-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #4b5563;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.view-btn:hover {
+  background: #e5e7eb;
+}
+
+.view-btn.active {
+  background: #111827;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+}
+
+/* Ana içerik alanı */
+.app-main {
+  margin-top: 8px;
+}
+
+/* Kart (tüm sayfalarda ortak) */
+.content-card {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* 3D & VR canvas kartı – padding yok, tamamen canvas */
+.content-card--canvas {
+  padding: 0;
+}
+
+/* 3D canvas sarmalayıcı */
+.three-container {
+  border-radius: 18px;
+  overflow: hidden;
+  height: 500px;
+}
+
+/* Liste görünümü (raf / seviye yapısı) */
+.rack {
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+}
+
+.levels {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.level {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  min-width: 220px;
+  background: #f9fafb;
+}
+
+.level-header {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.slots {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Slot kartı */
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px dashed #e5e7eb;
+  background: #ffffff;
+  font-size: 0.85rem;
+  text-align: left;
+  width: 100%;
+  cursor: default;
+}
+
+.slot-code {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Slot içindeki koli bilgisi */
+.slot-box-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 3px;
+  font-size: 0.8rem;
+}
+
+.slot-product {
+  font-weight: 600;
+  color: #374151;
+}
+
+.slot-qty {
+  color: #6b7280;
+}
+
+/* Dolu slot (sarı) */
+.slot--filled {
+  background: #fef3c7;      /* amber-100 */
+  border-color: #facc15;    /* amber-400 */
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.06s ease,
+    box-shadow 0.12s ease;
+}
+
+.slot--filled:hover {
+  background: #fde68a;      /* amber-200 */
+  box-shadow: 0 6px 14px rgba(251, 191, 36, 0.35);
+  transform: translateY(-1px);
+}
+
+
+/* Dolu göz satırı */
+.slot-full {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.slot-full:hover {
+  background: #fffbeb;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.slot-box-summary {
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #374151;
+}
+
+.slot-box-name {
+  font-weight: 500;
+}
+
+.slot-box-qty {
+  color: #6b7280;
+}
+
+/* Bilgi panelleri */
+.slot-info-panel {
+  font-size: 0.9rem;
+}
+
+.slot-info-title {
+  margin-top: 0;
+}
+
+.box-qr-large {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+}
+
+.info-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* Admin login */
+.admin-login {
+  max-width: 420px;
+  margin: 24px auto 0;
+}
+
+.admin-login-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-login-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.admin-login-form input {
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.admin-login-form input:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 1px #11182733;
+}
+
+.admin-login-form button {
+  margin-top: 4px;
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+}
+
+.admin-login-form button:hover {
+  background: #020617;
+}
+
+/* Admin panel içindeki tablo ve formlar eski class'larla devam ediyor */
+.admin-panel {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #e5e7eb;
+  padding: 6px 8px;
+}
+
+.admin-table th {
+  background: #f3f4f6;
+  text-align: left;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.admin-actions button {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-actions .edit-btn {
+  background: #0369a1;
+  color: white;
+}
+
+.admin-actions .delete-btn {
+  background: #b91c1c;
+  color: white;
+}
+
+/* Hata mesajları */
+.error {
+  color: #b91c1c;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Loading / error durumunda hizalama */
+.app--loading .app-shell,
+.app--error .app-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 64px);
+}
