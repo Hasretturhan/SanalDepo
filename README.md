@@ -21,10 +21,6 @@ Bu proje, bir depodaki **raf–seviye–göz yapısını** hem klasik liste gör
 - [Kurulum](#kurulum)
   - [Backend (.NET API)](#backend-net-api)
   - [Frontend (React)](#frontend-react)
-- [Kullanım Senaryosu](#kullanım-senaryosu)
-- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [Gelecek Geliştirmeler](#gelecek-geliştirmeler)
-- [Lisans](#lisans)
 
 ---
 
